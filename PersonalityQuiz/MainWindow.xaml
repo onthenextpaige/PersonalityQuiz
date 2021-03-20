@@ -1,0 +1,67 @@
+﻿<Window x:Class="PersonalityQuiz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalityQuiz"
+        mc:Ignorable="d"
+        Title="What's Your Personality Type?" Height="900" Width="800">
+    <Grid x:Name="question3ListBox1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Directions" Content="Answer the following questions to discover your personality type!" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Height="39" Margin="116,0,0,0"/>
+        <Label x:Name="question1" Content="1.	When your friend has a problem, your instinct is to:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" Grid.Row="1"/>
+        <ListBox x:Name="question1ListBox" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0,0,0,0" SelectionChanged="question1ListBox_SelectionChanged">
+            <RadioButton Content="Help them see the bigger picture"/>
+            <RadioButton Content="Get all the details to help solve the problem"/>
+            <RadioButton Content="Find a creative way to brighten their day"/>
+            <RadioButton Content="Grab a drink and talk it out"/>
+        </ListBox>
+        <ScrollBar Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="874" Margin="13,10,0,0" Grid.RowSpan="12" Width="17"/>
+        <Label Content="2. Where are you most likely to be found at a party?" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" FontSize="16"/>
+        <ListBox x:Name="question2ListBox" Grid.Row="4" VerticalAlignment="Center" BorderThickness="0,0,0,0">
+            <RadioButton Content="Serving up tasty drinks to your besties"/>
+            <RadioButton Content="Taking in the scene, wallflower-style"/>
+            <RadioButton Content="Dancing or chatting with everyone in the room"/>
+            <RadioButton Content="Leaving it"/>
+        </ListBox>
+        <Label Content="3. When something really amuses you, you react with:" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="5" VerticalAlignment="Center" FontSize="16"/>
+        <ListBox x:Name="question3ListBox" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0,0,0,0">
+            <RadioButton Content="A sheepish smile"/>
+            <RadioButton Content="A quiet chuckle"/>
+            <RadioButton Content="A big laugh"/>
+            <RadioButton Content="Slapping your knees and snorting"/>
+        </ListBox>
+        <Label Content="4. Which extracurriculars did you do in school?" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="7" VerticalAlignment="Center" FontSize="16"/>
+        <ListBox x:Name="question4ListBox" Grid.Row="8" VerticalAlignment="Center" BorderThickness="0,0,0,0">
+            <RadioButton Content="Debate team or book club "/>
+            <RadioButton Content="Theater"/>
+            <RadioButton Content="Sports"/>
+            <RadioButton Content="Volunteer work"/>
+        </ListBox>
+        <Label Content="5. Your dream home would feature:" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="9" VerticalAlignment="Center" FontSize="16"/>
+        <ListBox x:Name="question5ListBox" Grid.Row="10" BorderThickness="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <RadioButton Content="A pool"/>
+            <RadioButton Content="A decked-out luxury kitchen"/>
+            <RadioButton Content="A home theater, complete with popcorn machine"/>
+            <RadioButton Content="A hot tub or claw foot bath with views to the surrounding countryside"/>
+        </ListBox>
+        <Button x:Name="resultsButton" Content="Get my results!" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" FontStyle="Italic" Click="resultsButton_Click"/>
+    </Grid>
+</Window>
