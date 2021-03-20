@@ -20,12 +20,6 @@ namespace PersonalityQuiz
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     
-    static class MyVariables
-    {
-        public static string result;
-        public static string description;
-    }
-    
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -38,7 +32,10 @@ namespace PersonalityQuiz
         int bran = 0;
         int lG = 0;
         int cocoa = 0;
-               
+
+        public static string result;
+        public static string description;
+
         //question #1
         private void question1ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -93,10 +90,10 @@ namespace PersonalityQuiz
         //note: i don't have a good method for handling tied scores :(
         public void calculateResults()
         {
-            if (babka >= bran && babka >= lG && babka >= cocoa) { MyVariables.result = "Babka"; }
-            else if (bran >= lG && bran >= cocoa) { MyVariables.result = "Bran"; }
-            else if (lG >= cocoa) { MyVariables.result = "Lady Grey"; }
-            else { MyVariables.result = "Cocoa"; }
+            if (babka >= bran && babka >= lG && babka >= cocoa) { result = "Babka"; }
+            else if (bran >= lG && bran >= cocoa) { result = "Bran"; }
+            else if (lG >= cocoa) { result = "Lady Grey"; }
+            else { result = "Cocoa"; }
 
             //personality type descriptions
             var types = new Dictionary<string, string>()
@@ -108,16 +105,20 @@ namespace PersonalityQuiz
             };
 
             //asign the description based on the result
-            MyVariables.description = types[MyVariables.result];
+            description = types[result];
 
         }
 
         private void resultsButton_Click(object sender, RoutedEventArgs e)
         {
-            //make the second window appear after clicking the button
-            ResultsWindow objResultsWindow = new ResultsWindow();
-            objResultsWindow.Show();
+            //assign the text for result and description after clicking the button
+            resultBlock.Text = result;
+            descriptionBox.Text = description;
 
+            //make everything visible
+            resultLabel.Visibility = Visibility.Visible;
+            resultBlock.Visibility = Visibility.Visible;
+            descriptionBox.Visibility = Visibility.Visible;
         }
     }
 }

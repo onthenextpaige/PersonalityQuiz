@@ -14,16 +14,19 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2.5*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2.5*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2.5*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2.5*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2.5*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Label x:Name="Directions" Content="Answer the following questions to discover your personality type!" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Height="39" Margin="116,0,0,0"/>
         <Label x:Name="question1" Content="1.	When your friend has a problem, your instinct is to:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="16" Grid.Row="1"/>
@@ -33,7 +36,6 @@
             <RadioButton Content="Find a creative way to brighten their day"/>
             <RadioButton Content="Grab a drink and talk it out"/>
         </ListBox>
-        <ScrollBar Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="874" Margin="13,10,0,0" Grid.RowSpan="12" Width="17"/>
         <Label Content="2. Where are you most likely to be found at a party?" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" FontSize="16"/>
         <ListBox x:Name="question2ListBox" Grid.Row="4" VerticalAlignment="Center" BorderThickness="0,0,0,0">
             <RadioButton Content="Serving up tasty drinks to your besties"/>
@@ -62,6 +64,12 @@
             <RadioButton Content="A home theater, complete with popcorn machine"/>
             <RadioButton Content="A hot tub or claw foot bath with views to the surrounding countryside"/>
         </ListBox>
-        <Button x:Name="resultsButton" Content="Get my results!" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" FontStyle="Italic" Click="resultsButton_Click"/>
+        <Button x:Name="resultsButton" Content="Get my results!" HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" FontSize="16" FontWeight="Normal" FontStyle="Italic" Click="resultsButton_Click"/>
+        <Label x:Name="resultLabel" Content="Your personality type is:" HorizontalAlignment="Center" Grid.Row="12"
+               VerticalAlignment="Center" RenderTransformOrigin="-0.29,0.436" FontSize="16" FontStyle="Normal" Visibility="Hidden"/>
+        <TextBlock x:Name="resultBlock" HorizontalAlignment="Center" Grid.Row="13" Text="?" Visibility="Hidden"
+                   TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.187" FontSize="30" FontWeight="Bold"/>
+        <TextBox x:Name="descriptionBox" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="14" Text="?"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
     </Grid>
 </Window>
